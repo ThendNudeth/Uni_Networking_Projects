@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import javax.sound.sampled.LineUnavailableException;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.util.ArrayList;
@@ -254,7 +255,8 @@ class ClientGUI {
             final Boolean[] recording = {false};
             final Boolean[] vnExists = {false};
 
-            FileInputStream input = new FileInputStream("call.png");
+            // FileInputStream input = new FileInputStream("resources/call.png");
+            InputStream input = getClass().getResourceAsStream("/call.png");
             Image image = new Image(input);
             ImageView imageView = new ImageView(image);
             final Boolean[] inCall = {false};
